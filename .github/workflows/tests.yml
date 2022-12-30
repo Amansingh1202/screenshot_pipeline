@@ -23,7 +23,7 @@ jobs:
     - run: npm run build
     - run: npm run predeploy
     - run: |
-        git config --global user.name $aman1202
+        git config --global user.name $amansingh1202
         git config --global user.email $aks001235@gmail.com
         git remote set-url origin https://${github_token}@github.com/${repository}
         npm run deploy
