@@ -1,8 +1,13 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { toMatchImageSnapshot } from 'jest-image-snapshot';
+const puppeteer = require('puppeteer');
+expect.extend({ toMatchImageSnapshot });
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+
+it('CreateReactApp home', async () => {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.goto('http://localhost:3000');
+    const image = await page.screenshot();
+
+    expect(image).toMatchImageSnapshot();
+})
