@@ -20,6 +20,5 @@ afterEach(() => { queryClient.clear() });
 
 afterAll(async done => {
   browser.close()
-
   done();
 });
