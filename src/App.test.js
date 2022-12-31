@@ -14,3 +14,9 @@ it('CreateReactApp home', async () => {
     const image = await page.screenshot();
     expect(image).toMatchImageSnapshot();
 })
+
+afterAll(async done => {
+  browser.close()
+
+  done();
+});
