@@ -10,5 +10,6 @@ it('CreateReactApp home', async () => {
     await page.goto('https://amansingh1202.github.io/screenshot_pipeline');
     // await page.goto('http://localhost:3000/')
     const image = await page.screenshot();
+    expect(image).toMatchImageSnapshot();
     done();
 })
