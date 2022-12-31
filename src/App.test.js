@@ -11,8 +11,8 @@ describe("Browser testing", () => {
   });
 
   it("make a screenshot", async () => {
-    //await page.goto('https://amansingh1202.github.io/screenshot_pipeline');
-    await page.goto('http://localhost:3000/')
+    await page.goto('https://amansingh1202.github.io/screenshot_pipeline');
+    //await page.goto('http://localhost:3000/')
     await page.screenshot({ path: "screenshot.png" });
   });
   afterAll(async () => {
