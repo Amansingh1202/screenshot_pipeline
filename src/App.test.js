@@ -3,6 +3,7 @@ const puppeteer = require('puppeteer');
 expect.extend({ toMatchImageSnapshot });
 
 jest.setTimeout(5000)
+jest.useFakeTimers()
 
 
 
@@ -14,6 +15,8 @@ it('CreateReactApp home', async () => {
     const image = await page.screenshot();
     expect(image).toMatchImageSnapshot();
 })
+
+afterEach(() => { queryClient.clear() });
 
 afterAll(async done => {
   browser.close()
